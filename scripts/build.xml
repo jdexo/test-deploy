@@ -1,0 +1,14 @@
+<?xml version="1.0"?> 
+<project name="phpsyntaxcheck" default="syntaxcheck_php"> 
+    <target name="syntaxcheck_php" description="Run PHP syntax checking on the project docroot."> 
+	<fileset dir="../docroot" id="phpfiles"> <include name="*.php" /> 
+	    <include name="**/*.php" /> <include name="**/*.inc" /> 
+	    <include name="**/*.module" /> <include name="**/*.install" /> 
+	    <include name="**/*.profile" /> 
+	    <include name="**/*.test" /> 
+	</fileset> 
+	<phplint haltonfailure="true"> 
+	    <fileset refid="phpfiles" /> 
+	</phplint> 
+    </target> 
+</project>
